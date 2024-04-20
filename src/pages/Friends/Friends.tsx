@@ -1,4 +1,4 @@
-function Friends() {
+const Friends = () => {
 	return (
 		<h1>
 			Friends

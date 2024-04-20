@@ -1,4 +1,4 @@
-function Error() {
+const Error = () => {
 	return (
 		<h1>
 			Error

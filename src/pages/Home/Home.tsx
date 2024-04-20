@@ -15,7 +15,6 @@ const Home = () => {
 		canvas.width = 390
 		canvas.height = 844
 
-
 		// Рисование на холсте
 		ctx.fillStyle = 'white'
 		ctx.font = '10px Arial'

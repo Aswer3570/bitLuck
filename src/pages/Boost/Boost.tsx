@@ -1,4 +1,4 @@
-function Boost() {
+const Boost = () => {
 	return (
 		<h1>
 			Boost
