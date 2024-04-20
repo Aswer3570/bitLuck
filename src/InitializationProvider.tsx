@@ -14,7 +14,7 @@ const InitializationProvider = ({ children }: {children: any}) => {
 	}
 
 	// unknown и macos - удалить потом
-	if (webApp?.platform !== 'ios' && webApp.platform !== 'android' && webApp.platform !== 'unknown') {
+	if (webApp?.platform !== 'ios' && webApp.platform !== 'android' && webApp.platform !== 'unknown' && webApp.platform !== 'macos') {
 		return (
 			<NoSupport />
 		)

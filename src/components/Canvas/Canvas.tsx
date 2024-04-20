@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Canvas = React.forwardRef<HTMLCanvasElement>((props, ref) => {
+interface CanvasProps extends React.CanvasHTMLAttributes<HTMLCanvasElement> {
+	className?: string
+}
+
+const Canvas = React.forwardRef<HTMLCanvasElement, CanvasProps>((props, ref) => {
 	return (
-		<canvas ref={ref} {...props} className="canvas" />
+		<canvas ref={ref} {...props}/>
 	)
 })
 
