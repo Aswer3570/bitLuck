@@ -1,12 +1,15 @@
-import { useWebApp } from '@vkruglikov/react-telegram-web-app'
+import { useWebApp, useExpand } from '@vkruglikov/react-telegram-web-app'
 
 import NoSupport from './pages/NoSupport/NoSupport'
 import Error from './pages/Error/Error'
 
 const InitializationProvider = ({ children }: {children: any}) => {
 	const webApp = useWebApp()
+	const [isExpanded, expand] = useExpand()
+
 	if (webApp) {
 		webApp.ready()
+		expand()
 	}
 
 	if (webApp === null) {
