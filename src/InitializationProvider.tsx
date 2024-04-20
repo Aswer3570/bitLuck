@@ -9,7 +9,7 @@ const InitializationProvider = ({ children }: {children: any}) => {
 		webApp.ready()
 	}
 
-	const [isExpanded, expand] = useExpand()
+	// const [isExpanded, expand] = useExpand()
 
 	if (webApp === null) {
 		return <Error />
