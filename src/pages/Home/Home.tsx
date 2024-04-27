@@ -13,17 +13,17 @@ const Home = () => {
 		connectionServer()
 	}, [])
 
-	const hashGeneration = useCallback((): void => {
-		impactOccurred('light')
+	// const hashGeneration = useCallback((): void => {
+	// 	impactOccurred('light')
 
-		// Отправка сообщения на сервер
-		socket.emit('message', {userId: userId})
+	// 	// Отправка сообщения на сервер
+	// 	socket.emit('message', {userId: userId})
 
-		// Однократный обработчик входящего сообщения от сервера
-		socket.once('message', (data) => {
-			console.log(data)
-		})
-	}, [])
+	// 	// Однократный обработчик входящего сообщения от сервера
+	// 	socket.once('message', (data) => {
+	// 		console.log(data)
+	// 	})
+	// }, [])
 	
 	return (
 		<main className="home">
@@ -35,7 +35,9 @@ const Home = () => {
 				}
 			</p>
 
-			<Button onClick={() => hashGeneration} />
+			{/* <Button onClick={() => hashGeneration} /> */}
+
+			<Button />
 		</main>
 	)
 }
