@@ -16,13 +16,15 @@ const InitializationProvider = ({ children }: {children: any}) => {
 			expand()
 		}
 
-		if (webApp.initDataUnsafe.user?.id === undefined) {
-			return <Error error="Не удалось получить Telegram user id" />
-		}
+		// if (webApp.initDataUnsafe.user?.id === undefined) {
+		// 	return <Error error="Не удалось получить Telegram user id" />
+		// }
 	}
 	else {
 		return <Error error="Не удалось инициализировать доступ к api Telegram" />
 	}
+
+	console.log(import.meta.env.PROD)
 
 	// unknown и macos - удалить потом
 	if (platform !== 'ios' && platform !== 'android' && platform !== 'unknown' && platform !== 'macos') {

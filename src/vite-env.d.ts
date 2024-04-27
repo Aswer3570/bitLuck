@@ -8,7 +8,8 @@ declare module '*.svg' {
 
 interface ImportMetaEnv {
 	readonly VITE_BITCOIN_ADDRESS: string,
-	readonly VITE_BACKEND_URL_ADDRESS: string
+	readonly VITE_BACKEND_URL_ADDRESS: string,
+	readonly PROD: string,
 }
 
 interface ImportMeta {
