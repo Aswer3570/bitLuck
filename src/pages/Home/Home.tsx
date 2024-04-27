@@ -1,17 +1,17 @@
-import { useCallback, useEffect } from 'react'
-import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app'
+// import { useCallback, useEffect } from 'react'
+// import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app'
 
 import './Home.scss'
 import HashBlock from '../../components/HashBlock/HashBlock'
 import Button from '../../components/Button/Button'
-import { socket, connectionServer } from './homeApiRequests'
+// import { socket, connectionServer } from './homeApiRequests'
 
 const Home = () => {
-	const [impactOccurred, ,] = useHapticFeedback()
+	// const [impactOccurred, ,] = useHapticFeedback()
 
-	useEffect(() => {
-		connectionServer()
-	}, [])
+	// useEffect(() => {
+	// 	connectionServer()
+	// }, [])
 
 	// const hashGeneration = useCallback((): void => {
 	// 	impactOccurred('light')
@@ -29,7 +29,7 @@ const Home = () => {
 		<main className="home">
 			<HashBlock lastAttempt="12ib7dApVFvg82TXKycWBNpN8kFyiAN1dr" />
 
-			<p>
+			<p style={{color: '#fff'}}>
 				{
 					window?.Telegram?.WebApp?.id
 				}
