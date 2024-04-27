@@ -33,7 +33,7 @@ const InitializationProvider = ({ children }: {children: any}) => {
 	// 	localStorage.setItem('Id', telegramIdFromUrl)
 	// }
 
-	console.log(webApp)
+	console.log(webApp.initDataUnsafe.user.id)
 
 	return (
 		<>
