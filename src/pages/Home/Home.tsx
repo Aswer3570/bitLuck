@@ -31,7 +31,7 @@ const Home = () => {
 
 			<p>
 				{
-					window.Telegram.WebApp.id
+					window?.Telegram?.WebApp?.id
 				}
 			</p>
 
