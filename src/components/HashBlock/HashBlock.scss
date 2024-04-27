@@ -1,0 +1,66 @@
+header {
+	.hash-block__container {
+		background-color: var(--dark-blue);
+		border-radius: 15px;
+		border: 1px solid var(--darker-blue);
+	
+		.hash-block {
+			display: flex;
+			flex-direction: column;
+			padding: 15px 15px 0 15px;
+
+			&--bottom {
+				padding: 0 15px 15px 15px;
+			}
+	
+			&__title {
+				color: var(--light-gray);
+				font-size: 10px;
+				margin: 0 0 15px 0;
+				font-weight: 400;
+			}
+	
+			&__address {
+				color: var(--white);
+				font-size: 15px;
+				margin: 0 0 0 0;
+				font-weight: 600;
+	
+				&--red {
+					color: var(--red);
+				}
+	
+				&--green {
+					color: var(--green);
+				}
+			}
+		}
+	
+		.hash-line__container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 15px 0 15px 0;
+	
+			.hash-line {
+				width: 100%;
+				height: 1px;
+				background-color: var(--dark-charcoal);
+			}
+	
+			.swap-icon {
+				width: 25px;
+				fill: var(--yellow);
+				flex-shrink: 0;
+				margin: 0 10px 0 10px;
+			}
+		}
+	}
+	
+	.hash-description {
+		color: var(--steel);
+		font-size: 11px;
+		margin: 15px 0 0 15px;
+		font-weight: 400;
+	}
+}

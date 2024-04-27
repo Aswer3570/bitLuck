@@ -1,29 +1,42 @@
-import { useRef, useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
+import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app'
 
-import Canvas from '../../components/Canvas/Canvas'
+import './Home.scss'
+import HashBlock from '../../components/HashBlock/HashBlock'
+import Button from '../../components/Button/Button'
+import { socket, connectionServer } from './homeApiRequests'
 
 const Home = () => {
-	const canvasHomeRef = useRef<HTMLCanvasElement>(null)
+	const [impactOccurred, ,] = useHapticFeedback()
 
 	useEffect(() => {
-		const canvas = canvasHomeRef.current
-		if (!canvas) return
-
-		const ctx = canvas.getContext('2d')
-		if (!ctx) return
-
-		canvas.width = 390
-		canvas.height = 844
-
-		// Рисование на холсте
-		ctx.fillStyle = 'white'
-		ctx.font = '10px Arial'
-		ctx.fillText('Пример использования Canvas', 10, 10)
-
+		connectionServer()
 	}, [])
 
+	const hashGeneration = useCallback((): void => {
+		impactOccurred('light')
+
+		// Отправка сообщения на сервер
+		socket.emit('message', {userId: userId})
+
+		// Однократный обработчик входящего сообщения от сервера
+		socket.once('message', (data) => {
+			console.log(data)
+		})
+	}, [])
+	
 	return (
-		<Canvas ref={canvasHomeRef} />
+		<main className="home">
+			<HashBlock lastAttempt="12ib7dApVFvg82TXKycWBNpN8kFyiAN1dr" />
+
+			<p>
+				{
+					window.Telegram.WebApp.id
+				}
+			</p>
+
+			<Button onClick={() => hashGeneration} />
+		</main>
 	)
 }
 
