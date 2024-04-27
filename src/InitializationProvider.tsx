@@ -21,9 +21,6 @@ const InitializationProvider = ({ children }: {children: any}) => {
 		return <Error />
 	}
 
-	console.log(webApp.id)
-	console.log(window)
-
 	// unknown и macos - удалить потом
 	if (webApp?.platform !== 'ios' && webApp.platform !== 'android' && webApp.platform !== 'unknown' && webApp.platform !== 'macos') {
 		return (
@@ -31,10 +28,12 @@ const InitializationProvider = ({ children }: {children: any}) => {
 		)
 	}
 
-	const telegramIdFromUrl: string | null = new URLSearchParams(window.location.search).get('id')
-	if (telegramIdFromUrl !== null) {
-		localStorage.setItem('Id', telegramIdFromUrl)
-	}
+	// const telegramIdFromUrl: string | null = new URLSearchParams(window.location.search).get('id')
+	// if (telegramIdFromUrl !== null) {
+	// 	localStorage.setItem('Id', telegramIdFromUrl)
+	// }
+
+	console.log(webApp)
 
 	return (
 		<>

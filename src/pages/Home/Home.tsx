@@ -1,43 +1,35 @@
-// import { useCallback, useEffect } from 'react'
-// import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app'
+import { useCallback, useEffect } from 'react'
+import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app'
 
 import './Home.scss'
 import HashBlock from '../../components/HashBlock/HashBlock'
 import Button from '../../components/Button/Button'
-// import { socket, connectionServer } from './homeApiRequests'
+import { socket, connectionServer } from './homeApiRequests'
 
 const Home = () => {
-	// const [impactOccurred, ,] = useHapticFeedback()
+	const [impactOccurred, ,] = useHapticFeedback()
 
-	// useEffect(() => {
-	// 	connectionServer()
-	// }, [])
+	useEffect(() => {
+		connectionServer()
+	}, [])
 
-	// const hashGeneration = useCallback((): void => {
-	// 	impactOccurred('light')
+	const hashGeneration = useCallback((): void => {
+		impactOccurred('light')
 
-	// 	// Отправка сообщения на сервер
-	// 	socket.emit('message', {userId: userId})
+		// Отправка сообщения на сервер
+		// socket.emit('message', {userId: userId})
 
-	// 	// Однократный обработчик входящего сообщения от сервера
-	// 	socket.once('message', (data) => {
-	// 		console.log(data)
-	// 	})
-	// }, [])
+		// Однократный обработчик входящего сообщения от сервера
+		socket.once('message', (data) => {
+			console.log(data)
+		})
+	}, [])
 	
 	return (
 		<main className="home">
 			<HashBlock lastAttempt="12ib7dApVFvg82TXKycWBNpN8kFyiAN1dr" />
 
-			<p style={{color: '#fff'}}>
-				{
-					window?.Telegram?.WebApp?.id
-				}
-			</p>
-
-			{/* <Button onClick={() => hashGeneration} /> */}
-
-			<Button />
+			<Button onClick={() => hashGeneration} />
 		</main>
 	)
 }

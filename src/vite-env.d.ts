@@ -7,7 +7,8 @@ declare module '*.svg' {
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-	readonly VITE_BITCOIN_HASH_ADDRESS: string
+	readonly VITE_BITCOIN_HASH_ADDRESS: string,
+	readonly VITE_BACKEND_URL_ADDRESS: string
 }
 
 interface ImportMeta {
