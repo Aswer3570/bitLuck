@@ -22,13 +22,3 @@ export const connectionServer = (): (() => void) => {
 const handleConnectError = (error: Error):void => {
 	console.error(`Socket connection error: ${ error }`)
 }
-
-
-
-
-
-
-
-// Получение данных из локального хранилища при загрузке компонента
-// const lastReceivedHash = JSON.parse(localStorage.getItem('lastReceivedHash'))
-// setReceivedHASH(lastReceivedHash)

@@ -22,6 +22,10 @@
 			transform: scale(0.98);
 		}
 
+		&--disabled {
+			background-color: red;
+		}
+
 		&-title {
 			width: 100%;
 			height: 100%;

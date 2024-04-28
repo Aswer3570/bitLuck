@@ -3,15 +3,24 @@ import { useMemo } from 'react'
 import './HashBlock.scss'
 import SwapIcon from "../../assets/swap.svg"
 
-const HashBlock = ({ lastAttempt }: {lastAttempt: string}) => {
-	const hashComparison = useMemo((): string => {
-		if (lastAttempt === import.meta.env.VITE_BITCOIN_ADDRESS) {
+interface HashBlockProps {
+	results: {
+		lastHash: string;
+		userWin: boolean;
+	}
+}
+
+const HashBlock = ({ results }: HashBlockProps) => {
+	const { lastHash, userWin } = results
+
+	const isUserWin = useMemo((): string => {
+		if (userWin) {
 			return 'hash-block__address--green'
 		}
 		else {
 			return 'hash-block__address--red'
 		}
-	}, [lastAttempt])
+	}, [userWin])
 
 	return (
 		<header>
@@ -35,8 +44,8 @@ const HashBlock = ({ lastAttempt }: {lastAttempt: string}) => {
 				</div>
 
 				<div className="hash-block hash-block--bottom">
-					<p className={`hash-block__address ${hashComparison}`}>
-						{ lastAttempt }
+					<p className={`hash-block__address ${isUserWin}`}>
+						{ lastHash }
 					</p>
 				</div>
 			</div>

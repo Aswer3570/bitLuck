@@ -1,0 +1,70 @@
+.tap-bot__container {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 20px 0;
+	align-items: center;
+
+	.tap-bot__block {
+		background-color: var(--dark-blue);
+		padding: 11px 17px 11px 17px;
+		margin: 0 0 0 0;
+		color: var(--white);
+		border-radius: 20px;
+		font-size: 12px;
+		font-weight: 600;
+		border: 0;
+		cursor: pointer;
+		outline: none;
+		border: 1px solid var(--darker-blue);
+
+		.tap-bot__toogle {
+			color: var(--red);
+		}
+	}
+
+	.counter__container {
+		color: var(--white);
+		font-size: 22px;
+		margin: 0 0 0 0;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	
+		.star-icon {
+			width: 24px;
+			height: 24px;
+			margin: 0 7px 0 0;
+		}
+	}
+}
+
+.bottom-menu__container {
+	display: flex;
+	justify-content: space-between;
+
+	.bottom-menu__button {
+		flex: 1;
+		text-decoration: none;
+		color: var(--white);
+		background-color: var(--dark-blue);
+		padding: 12px 20px 12px 20px;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 600;
+		font-size: 15px;
+		border: 1px solid var(--darker-blue);
+
+		&:last-child {
+			margin: 0 0 0 20px;
+		}
+
+		.cat-face__icon, .hatching-chick__icon, .rocket__icon {
+			width: 17px;
+			height: 17px;
+			margin: 0 7px 0 0;
+		}
+	}
+}
