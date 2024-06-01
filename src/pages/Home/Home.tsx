@@ -23,6 +23,8 @@ const Home = () => {
 		boost: 0
 	})
 
+	console.log(webApp)
+
 	useEffect(() => {
 		connectionServer()
 	}, [connectionServer])
